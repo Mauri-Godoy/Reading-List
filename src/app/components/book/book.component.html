@@ -1,9 +1,13 @@
-<div class="flex flex-col justify-center items-center h-48 w-40 relative">
+<div class="flex flex-col justify-center items-center xl:h-48 xl:w-40 h-32 w-24 relative rounded">
 
-  <img [src]="book.book.cover" [alt]="book.book.title" class="w-full h-full rounded-sm border-white border-2">
-  <div class="absolute h-full w-full bg-transparent flex items-center justify-center opacity-0 hover:opacity-100">
-    <h5 class="text-primary text-center font-bold uppercase">
-      {{book.book.title}}
-    </h5>
+  <img [src]="book.book.cover" [alt]="book.book.title" class="w-full h-full rounded-sm ">
+  <div
+    class="absolute h-full w-full bg-transparent flex items-start justify-center opacity-0 hover:opacity-100 duration-500">
+    <h6 class="text-tertiary text-center font-bold uppercase p-2">
+      {{book.book.author.name}} ({{book.book.year}})
+    </h6>
   </div>
+  <h6 class="text-white w-full text-center font-bold uppercase absolute bottom-0 bg-tertiary">
+    {{book.book.title}}
+  </h6>
 </div>

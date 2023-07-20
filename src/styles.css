@@ -5,9 +5,9 @@
 
 @layer base {
   :root {
-    --color-primary: #dacdbd;
-    --color-secondary: #ef97a3;
-    --color-tertiary: #3e3742;
+    --color-primary: #04394e;
+    --color-secondary: #00875e;
+    --color-tertiary: #f56217;
     --color-transparent: #3e3742dc;
     /* ... */
   }
