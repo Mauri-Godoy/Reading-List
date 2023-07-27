@@ -32,4 +32,11 @@ export class NavbarComponent {
       this.filterService.setSearch(this.search)
     })
   }
+
+  clean() {
+    this.category = ''
+    this.search = ''
+    this.filterService.setSearch(this.search)
+    this.filterService.setCategory(this.category)
+  }
 }
