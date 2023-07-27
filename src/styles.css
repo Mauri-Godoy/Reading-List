@@ -5,10 +5,10 @@
 
 @layer base {
   :root {
-    --color-primary: #04394e;
-    --color-secondary: #00875e;
-    --color-tertiary: #f56217;
-    --color-transparent: #3e3742dc;
+    --color-primary: #f9fafa;
+    --color-secondary: rgba(201, 216, 221, 0.937);
+    --color-tertiary: #3d7697;
+    --color-transparent: rgba(175, 213, 233, 0.774);
     /* ... */
   }
 

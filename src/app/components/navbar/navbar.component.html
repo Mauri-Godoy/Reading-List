@@ -1,7 +1,21 @@
-<div class="w-full py-4 border border-b-2 border-b-secondary bg-primary">
-  <h1 class="text-secondary text-xl font-bold uppercase text-center mb-8">Reading List</h1>
-  <div class="mx-auto flex w-4/12 justify-center bg-secondary rounded-md p-2 text-white">
-    <input type="text" class="placeholder-primary bg-secondary w-full outline-none" placeholder="Buscar">
-    <button class="outline-none border-l-2 border-l-white pl-2"><fa-icon [icon]="faSearch"> </fa-icon></button>
+<div class="w-full py-4 border border-b-2 border-b-tertiary bg-secondary">
+  <h1 class="text-tertiary text-xl font-bold uppercase text-center mb-8">Reading List</h1>
+  <div class="mx-auto flex w-6/12 justify-center gap-4">
+
+    <div class="bg-white border-2 border-tertiary rounded-md p-2 text-tertiary flex w-8/12">
+      <input type="text" class="placeholder-secondary bg-white w-full outline-none" placeholder="Buscar"
+        [(ngModel)]="search">
+      <button (click)="setSearch()" class="outline-none border-l-2 border-l-tertiary pl-2"><fa-icon [icon]="faSearch">
+        </fa-icon></button>
+    </div>
+
+    <select class="w-4/12 rounded outline-none bg-white text-tertiary border-2 border-tertiary  px-1"
+      [(ngModel)]="category" (ngModelChange)="setCategory()">
+      <option disabled selected hidden value="">Categorías</option>
+      <option value="">Todo</option>
+      <option *ngFor="let item of genreList" [value]="item">{{item}}</option>s
+    </select>
+
   </div>
+
 </div>
