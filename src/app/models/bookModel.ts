@@ -7,9 +7,9 @@ class Data {
   pages?: number;
   genre!: string;
   cover!: string;
-  year?: number;
+  year!: number;
   synopsis?: string;
-  ISBN?: string;
+  ISBN!: string;
   author!: Author;
 }
 

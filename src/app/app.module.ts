@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { BookComponent } from './components/book/book.component';
 import { LibraryComponent } from './components/library/library.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { FormsModule } from '@angular/forms';
+import { DataBookComponent } from './pages/data-book/data-book.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     LibraryComponent,
     FooterComponent,
     NavbarComponent,
+    DataBookComponent
   ],
   imports: [
     BrowserModule,

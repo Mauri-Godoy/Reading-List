@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import data from 'src/app/data/books.json';
 import { Book } from 'src/app/models/bookModel';
@@ -16,7 +17,7 @@ export class NavbarComponent {
   category: string = "";
   search: string = "";
 
-  constructor(private filterService: FilterService) {
+  constructor(private filterService: FilterService, private router: Router) {
     this.genreList = new Set(this.library.map(b => b.book.genre));
   }
 
@@ -26,7 +27,9 @@ export class NavbarComponent {
   }
 
   setSearch() {
-    this.category = ""
-    this.filterService.setSearch(this.search)
+    this.router.navigate(['/home']).then(() => {
+      this.category = ""
+      this.filterService.setSearch(this.search)
+    })
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs';
+import { Router } from '@angular/router';
 import { appear } from 'src/app/animations/appearAnimation';
 
 import data from 'src/app/data/books.json';
@@ -21,20 +21,27 @@ export class LibraryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.filter();
-    this.search();
+    this.categoryFilter();
+    this.searchFilter();
+
   }
 
-  filter() {
+  categoryFilter() {
     this.filterService.category.subscribe(category => {
       this.library = category ? this.data.filter(book => book.book.genre == category) : this.data
     })
   }
 
-  search() {
+  searchFilter() {
     this.filterService.search.subscribe(search => {
-      this.library = search ? this.data.filter(book => book.book.title.toLowerCase().includes(search.toLowerCase())) : this.data
-    })
+      this.library = search ? this.data.filter(book => {
+        search = search.toLowerCase();
+        const title: string = book.book.title.toLowerCase();
+        const author: string = book.book.author.name.toLowerCase();
+        const year: string = book.book.year.toString();
 
+        return title.toLowerCase().includes(search) || author.toLowerCase().includes(search) || year.includes(search)
+      }) : this.data
+    })
   }
 }
