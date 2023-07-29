@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { faList } from '@fortawesome/free-solid-svg-icons';
-import { appear } from 'src/app/animations/appearAnimation';
 import { Book } from 'src/app/models/bookModel';
 import { ReadingListService } from 'src/app/services/reading-list.service';
 
 @Component({
   selector: 'app-reading-list',
-  templateUrl: './reading-list.component.html',
-  animations: [appear]
+  templateUrl: './reading-list.component.html'
 })
 export class ReadingListComponent {
 
@@ -18,8 +16,11 @@ export class ReadingListComponent {
   }
 
   get readingList(): Book[] {
-
     return this.readingListService.readingList
+  }
+
+  get expand() {
+    return this.readingList.length > 0 && this.show
   }
 
   delete(ISBN: string): void {

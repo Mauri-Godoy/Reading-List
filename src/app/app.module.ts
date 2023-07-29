@@ -14,6 +14,8 @@ import { NavbarComponent } from './components/navbar/navbar.component'
 import { FormsModule } from '@angular/forms';
 import { DataBookComponent } from './pages/data-book/data-book.component';
 import { ReadingListComponent } from './components/reading-list/reading-list.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ReadingListService } from './services/reading-list.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,14 @@ import { ReadingListComponent } from './components/reading-list/reading-list.com
     RouterModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true,
+    })
   ],
-  providers: [],
+  providers: [ReadingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

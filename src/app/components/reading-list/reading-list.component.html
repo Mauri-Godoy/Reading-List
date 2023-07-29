@@ -8,10 +8,10 @@
     </button>
   </div>
 
-  <div class="relative" *ngIf="show && readingList.length" @appear>
-    <div class="rounded min-w-6/12 max-h-[40rem] bg-primary border-2 border-tertiary absolute right-4 p-8
-  grid grid-cols-[repeat(2,1fr)] z-20
-  gap-4 overflow-y-auto items-center">
+  <div class="relative">
+    <div [ngClass]="{'opacity-100 visible' : expand,
+    'opacity-0 invisible' : !expand}" class="rounded min-w-6/12 max-h-[40rem] bg-primary border-2 border-tertiary absolute right-4 p-8
+  grid grid-cols-[repeat(2,1fr)] z-20 gap-4 overflow-y-auto items-center duration-500">
       <app-book (deleteEvent)="delete($event)" [readingList]="true" *ngFor="let item of readingList; let i = index"
         [book]="item"></app-book>
     </div>
