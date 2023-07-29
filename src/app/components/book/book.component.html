@@ -3,7 +3,7 @@
   rounded-xl px-2 py-1 m-1 text-md z-30">
     <fa-icon [icon]="faTrash"></fa-icon> </button>
   <div [routerLink]="['/book', book.book.ISBN]"
-    class="flex flex-col justify-center items-center xl:h-48 xl:w-44 h-40 w-28 relative rounded cursor-pointer">
+    class="flex flex-col justify-center items-center xl:h-48 xl:w-44 sm:h-40 sm:w-28 w-24 h-36 relative rounded cursor-pointer">
     <img [src]="book.book.cover" [alt]="book.book.title" class="w-full h-full rounded-sm">
     <div *ngIf="!readingList"
       class="absolute h-full w-full bg-transparent flex items-start justify-center opacity-0 hover:opacity-100 duration-500">

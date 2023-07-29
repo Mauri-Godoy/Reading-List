@@ -1,5 +1,5 @@
-<div class="flex w-11/12 2xl:w-6/12 mx-auto my-2 2xl:my-20 justify-center items-start  bg-secondary rounded" @appear>
-  <img [src]="book.book.cover" alt="cover" class="xl:w-60 w-40 p-2 pt-12">
+<div class="flex sm:flex-row flex-col w-11/12 2xl:w-6/12 mx-auto my-2 2xl:my-20 justify-center items-center sm:items-start  bg-secondary rounded" @appear>
+  <img [src]="book.book.cover" alt="cover" class="xl:w-60 w-40 p-4 sm:pt-12 rounded">
   <div class="text-tertiary px-4">
     <p class="xl:text-2xl md:text-xl text-center"> {{book.book.author.name}} ({{book.book.year}})
     </p>
