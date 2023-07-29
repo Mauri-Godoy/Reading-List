@@ -1,17 +1,22 @@
-<div class="flex w-6/12 mx-auto my-20 justify-center items-center  bg-secondary rounded" @appear>
+<div class="flex w-11/12 2xl:w-6/12 mx-auto my-12 xl:my-16 2xl:my-20 justify-center items-center  bg-secondary rounded" @appear>
   <img [src]="book.book.cover" alt="cover" class="w-60 p-2">
   <div class="text-tertiary px-4">
-    <p class="text-2xl text-center"> {{book.book.author.name}} ({{book.book.year}})
+    <p class="xl:text-2xl text-xl text-center"> {{book.book.author.name}} ({{book.book.year}})
     </p>
 
     <div class="bg-tertiary text-white px-4 py-2 my-4 rounded">
-      <h2 class="text-center text-5xl uppercase font-bold my-4">{{book.book.title}}</h2>
-      <p class="text-justify text-2xl my-2 ">{{book.book.synopsis}}</p>
+      <h2 class="text-center xl:text-5xl text-3xl uppercase font-bold my-4">{{book.book.title}}</h2>
+      <p class="text-justify text-xl xl:text-2xl my-2 ">{{book.book.synopsis}}</p>
     </div>
-    <p class="text-xl text-right mb-2 flex justify-between px-"><span>
+    <p class="text-xl text-right mb-2 flex justify-between"><span>
         Páginas: {{book.book.pages}}
       </span> Género: {{book.book.genre}}</p>
-    <p *ngIf="book.book.author.otherBooks.length" class="mt-2 text-xl">Otras obras del autor:</p>
-    <p *ngFor="let item of book.book.author.otherBooks" class="ml-4 text-xl">• {{item}}</p>
+    <p *ngIf="book.book.author.otherBooks.length" class="mt-4 text-xl">Otras obras del autor:</p>
+    <p *ngFor="let item of book.book.author.otherBooks" class="text-xl ml-4">• {{item}}</p>
+
+    <div class="w-100 justify-center xl:justify-end flex">
+      <button class="btn" (click)="addBook()" type="button">
+        Agregar a la Lista de Lectura</button>
+    </div>
   </div>
 </div>

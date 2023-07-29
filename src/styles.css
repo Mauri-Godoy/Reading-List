@@ -6,13 +6,40 @@
 @layer base {
   :root {
     --color-primary: #f9fafa;
-    --color-secondary: rgba(201, 216, 221, 0.937);
+    --color-secondary: #c9d8ddef;
     --color-tertiary: #3d7697;
     --color-transparent: rgba(175, 213, 233, 0.774);
+    --color-danger: #e57373
     /* ... */
   }
 
   html {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
+
+  .btn {
+    @apply text-tertiary bg-white rounded px-4 py-2 uppercase font-bold my-2
+    place-items-end hover:brightness-90	duration-500  border-tertiary border-2
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #85a5b8;
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(78, 116, 136)
 }

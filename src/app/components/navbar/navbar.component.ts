@@ -4,7 +4,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import data from 'src/app/data/books.json';
 import { Book } from 'src/app/models/bookModel';
 import { FilterService } from 'src/app/services/filter.service';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'

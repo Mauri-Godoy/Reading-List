@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { FormsModule } from '@angular/forms';
 import { DataBookComponent } from './pages/data-book/data-book.component';
+import { ReadingListComponent } from './components/reading-list/reading-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DataBookComponent } from './pages/data-book/data-book.component';
     LibraryComponent,
     FooterComponent,
     NavbarComponent,
-    DataBookComponent
+    DataBookComponent,
+    ReadingListComponent
   ],
   imports: [
     BrowserModule,

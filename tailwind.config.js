@@ -10,6 +10,7 @@ module.exports = {
       tertiary: 'var(--color-tertiary)',
       white: '#fff',
       transparent: 'var(--color-transparent)',
+      danger: 'var(--color-danger)',
     },
   },
   plugins: [],

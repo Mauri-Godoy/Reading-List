@@ -1,0 +1,21 @@
+<div class="z-20">
+
+  <div class="w-full flex justify-end pr-4">
+    <button class="btn xl:text-md text-sm" (click)="show = !show" type="input">
+      Lista de Lectura
+      <fa-icon [icon]="faList"></fa-icon>
+      <span class="bg-tertiary text-white px-2 py-1 rounded-xl ml-4">{{readingList.length}}</span>
+    </button>
+  </div>
+
+  <div class="relative" *ngIf="show && readingList.length" @appear>
+    <div class="rounded min-w-6/12 max-h-[40rem] bg-primary border-2 border-tertiary absolute right-4 p-8
+  grid grid-cols-[repeat(2,1fr)] z-20
+  gap-4 overflow-y-auto items-center">
+      <app-book (deleteEvent)="delete($event)" [readingList]="true" *ngFor="let item of readingList; let i = index"
+        [book]="item"></app-book>
+    </div>
+
+  </div>
+
+</div>
